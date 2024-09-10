@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Refresh Connector Button</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Refresh Connector Button</masterLabel>
+    <targets>
+        <target>analytics__Dashboard</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="analytics__Dashboard">
+            <hasStep>false</hasStep>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

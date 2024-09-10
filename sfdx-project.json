@@ -13,6 +13,9 @@
             "path": "src/minlopro-crma"
         },
         {
+            "path": "src/comparion-sms-community"
+        },
+        {
             "path": "src/minlopro-default",
             "default": true
         }

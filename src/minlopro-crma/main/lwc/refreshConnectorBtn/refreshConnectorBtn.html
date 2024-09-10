@@ -1,0 +1,14 @@
+<template>
+    <lightning-layout vertical-align="stretch">
+        <lightning-layout-item alignment-bump="left">
+            <lightning-button
+                label="Refresh Connector"
+                icon-name="utility:refresh"
+                disabled={doDisableBtn}
+                onclick={handleClick}
+            ></lightning-button>
+            <span class="slds-p-around_x-small"><lightning-helptext content={helpText}></lightning-helptext></span>
+            <p lwc:if={connectorError} class="slds-text-color_error">Connector Error: {connectorError}</p>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

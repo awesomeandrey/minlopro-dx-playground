@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DigitalExperienceConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Comparion CRM</label>
+    <site>
+        <urlPathPrefix>comparion</urlPathPrefix>
+    </site>
+    <space>site/Comparion_CRM1</space>
+</DigitalExperienceConfig>

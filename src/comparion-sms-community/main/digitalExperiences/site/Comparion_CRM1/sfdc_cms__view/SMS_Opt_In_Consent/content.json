@@ -1,0 +1,70 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "SMS Opt-In Consent",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"d0965fb2-6a5d-4202-ad21-96f79c2b38dd\",\"columns\":[{\"UUID\":\"c356cb2b-160c-4443-81b7-034121211d0b\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { }
+              },
+              "definition" : "c:optInConsentPanel",
+              "id" : "ed1784ce-3f40-4274-ad6e-ae5e4bc94a9f",
+              "type" : "component"
+            } ],
+            "id" : "c356cb2b-160c-4443-81b7-034121211d0b",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "d0965fb2-6a5d-4202-ad21-96f79c2b38dd",
+          "type" : "component"
+        } ],
+        "id" : "b0139e90-7eb0-4915-86dc-fb7c300a1c5c",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "This page captures & processes SMS Opt-In consent from the customers.",
+            "dxpStyle" : { },
+            "pageTitle" : "SMS Opt-In Consent",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "4b9c9536-5857-47b0-adf4-f72d9885112e",
+          "type" : "component"
+        } ],
+        "id" : "2b8bd22b-b4d5-4dc9-87c7-974e568ec4f3",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "3a1fb27e-9820-48fc-bf28-114479223cab",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-sms-opt-in-consent"
+  }
+}

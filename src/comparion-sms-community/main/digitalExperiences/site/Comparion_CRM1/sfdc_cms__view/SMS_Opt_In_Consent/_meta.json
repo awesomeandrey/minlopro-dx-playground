@@ -1,0 +1,5 @@
+{
+  "apiName" : "SMS_Opt_In_Consent",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

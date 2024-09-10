@@ -1,0 +1,11 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "SMS Opt-In Consent",
+  "contentBody" : {
+    "activeViewId" : "SMS_Opt_In_Consent",
+    "configurationTags" : [ ],
+    "pageAccess" : "Public",
+    "routeType" : "custom-sms-opt-in-consent",
+    "urlPrefix" : "sms-opt-in-consent"
+  }
+}
