@@ -34,7 +34,7 @@ npx dotenv -e ".env" -- sf project deploy start \
   --manifest "$packageXml" \
   --pre-destructive-changes "$preDestructiveChangesXml" \
   --post-destructive-changes "$postDestructiveChangesXml" \
-  --verbose \
   --ignore-conflicts \
   --ignore-warnings \
+  --concise \
   --wait 20

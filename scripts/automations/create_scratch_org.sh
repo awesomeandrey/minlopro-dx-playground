@@ -70,6 +70,3 @@ sf community publish --name "ESW_Minlopro_DigExMessaging" --target-org "$SCRATCH
 # Import & publish Knowledge Articles from DevHub org (leveraging SFDMU plugin)
 inputsFile="build/inputs.txt"; touch $inputsFile; echo "$DEV_HUB_ALIAS" > $inputsFile; echo "$SCRATCH_ORG_ALIAS" >> $inputsFile
 bash ./scripts/util/data-seeding/migrate_knowledge_articles.sh < $inputsFile
-
-# Reset Metadata Tracking
-npm run sf:tracking:reset

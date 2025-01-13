@@ -19,23 +19,22 @@ destructiveChangesXml="$sgdFolder/destructiveChanges/destructiveChanges.xml"
 mkdir -p "$sgdFolder"
 
 # Invoke SGD plugin and generate manifests;
-sf sgd:source:delta \
+sf sgd source delta \
   --from "$FROM_REF" \
   --to "$TO_REF" \
-  --output "$sgdFolder" \
-  --source "src" \
-  --ignore '.forceignore'
+  --output-dir "$sgdFolder" \
+  --source-dir "src" \
+  --ignore-file '.forceignore'
 
 # Output results;
+echo "📜 SGD DIRECTORY"
 tree "$sgdFolder"
 echo "📜 SGD PACKAGE.XML"
 cat "$packageXml"
 echo
 echo "📜 SGD DESTRUCTIVE_CHANGES.XML"
 cat "$destructiveChangesXml"
+echo
 
 # Copy 'package.xml' manifest to 'manifests' folder;
 cp -f "$packageXml" "manifests/package.xml"
-echo
-echo
-tree "manifests"
