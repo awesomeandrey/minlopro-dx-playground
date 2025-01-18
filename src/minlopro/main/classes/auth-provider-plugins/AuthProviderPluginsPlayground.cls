@@ -8,10 +8,6 @@ public with sharing class AuthProviderPluginsPlayground {
         this.runClientCredentialsFlow();
         this.runWedServerWithPkceFlow();
         this.runJwtFlow();
-        Logger.debug(
-            'Consumed {0} callouts out of {1} limit.',
-            Lists.of(Limits.getCallouts().toString(), Limits.getLimitCallouts().toString())
-        );
     }
 
     public void runClientCredentialsFlow() {
@@ -27,7 +23,7 @@ public with sharing class AuthProviderPluginsPlayground {
     }
 
     private void run(String oauthFlowToTest, String namedCredentialApiName) {
-        Logger.debug(oauthFlowToTest);
+        Integer currentCalloutsConsumed = Limits.getCallouts();
         try {
             // Prepare HTTP request;
             HttpRequest req = new HttpRequest();
@@ -40,10 +36,7 @@ public with sharing class AuthProviderPluginsPlayground {
             req.setEndpoint(endpoint);
             // Invoke callout and parse response;
             HttpResponse resp = new Http().send(req);
-            Logger.debug(
-                '{0} > HTTP Response Status Code = {1}',
-                Lists.of(namedCredentialApiName, String.valueOf(resp.getStatusCode()))
-            );
+            Logger.debug('{0} ({1}) > HTTP Status = {2}', Lists.of(namedCredentialApiName, oauthFlowToTest, resp.getStatus()));
             Assert.areEqual(200, resp.getStatusCode());
             OrganizationsPayload responsePayload = (OrganizationsPayload) JSON.deserialize(
                 resp.getBody(),
@@ -54,6 +47,8 @@ public with sharing class AuthProviderPluginsPlayground {
             Assert.isFalse(String.isBlank(responsePayload.records[0].Name));
         } catch (Exception ex) {
             Logger.error(oauthFlowToTest + ': FAILED');
+        } finally {
+            Logger.debug('Consumed {0} HTTP callout(s).', Lists.of((Limits.getCallouts() - currentCalloutsConsumed).toString()));
         }
     }
 
